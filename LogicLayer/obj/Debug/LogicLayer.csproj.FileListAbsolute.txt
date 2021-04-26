@@ -1,0 +1,9 @@
+D:\Programacion 1\LogicLayer\bin\Debug\LogicLayer.dll
+D:\Programacion 1\LogicLayer\bin\Debug\LogicLayer.pdb
+D:\Programacion 1\LogicLayer\bin\Debug\Database.dll
+D:\Programacion 1\LogicLayer\bin\Debug\Database.pdb
+D:\Programacion 1\LogicLayer\obj\Debug\LogicLayer.csprojAssemblyReference.cache
+D:\Programacion 1\LogicLayer\obj\Debug\LogicLayer.csproj.CoreCompileInputs.cache
+D:\Programacion 1\LogicLayer\obj\Debug\LogicLayer.csproj.CopyComplete
+D:\Programacion 1\LogicLayer\obj\Debug\LogicLayer.dll
+D:\Programacion 1\LogicLayer\obj\Debug\LogicLayer.pdb
