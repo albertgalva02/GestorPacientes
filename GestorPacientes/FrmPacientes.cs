@@ -155,7 +155,7 @@ namespace GestorPacientes
 
             if (TbxNombre.Text == "" || TbxApellido.Text == "" || TbxTelefono.Text == "" || TbxDireccion.Text == "" || TbxCedula.Text == "" || DtFechaNac.Value.ToString("dd/MM/yyyy") == "" || CbxFumadorItem.Value == null || CbxAlergiasItem.Value == null || PbFoto.Image == null)
             {
-                MessageBox.Show("Debe rellenar todos los campos");
+                MessageBox.Show("Debe rellenar todos los campos incluida la foto");
             }
             else
             {
@@ -188,7 +188,7 @@ namespace GestorPacientes
 
             if (TbxNombre.Text == "" || TbxApellido.Text == "" || TbxTelefono.Text == "" || TbxDireccion.Text == "" || TbxCedula.Text == "" || DtFechaNac.Value.ToString("dd/MM/yyyy") == "" || CbxFumadorItem.Value == null || CbxAlergiasItem.Value == null || PbFoto.Image == null)
             {
-                MessageBox.Show("Debe rellenar todos los campos");
+                MessageBox.Show("Debe rellenar todos los campos incluida la foto");
             }
             else
             {

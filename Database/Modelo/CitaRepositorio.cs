@@ -116,9 +116,9 @@ namespace Database.Modelo
 
         public DataTable GetAll()
         {
-            SqlDataAdapter command = new SqlDataAdapter("SELECT c.id_cita, p.nombre, m.nombre, c.fecha, c.hora, c.causa, " +
+            SqlDataAdapter command = new SqlDataAdapter("SELECT c.id_cita as 'ID', p.nombre as 'Paciente', m.nombre as 'Medico', c.fecha, c.hora, c.causa, " +
                 "case when c.estado = 'PC' then 'Pendiente de Consulta' when c.estado = 'PR' " +
-                "then 'Pendiente de Resultados' when c.estado = 'C' then 'Completado' end as 'estado' " +
+                "then 'Pendiente de Resultados' when c.estado = 'C' then 'Completado' end as 'Estado' " +
                 "FROM citas c INNER JOIN pacientes p on(c.id_paciente = p.id_paciente) " +
                 "INNER JOIN medicos m on (c.id_medico = m.id_medico)", _connection);
 

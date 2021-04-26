@@ -83,7 +83,8 @@ namespace GestorPacientes
                 cita.Agregar(NuevaCita);
 
                 MessageBox.Show("Cita Agregada Exitosamente!");
-                FrmCitas.instancia.Show();
+                FrmCitas form = new FrmCitas();
+                form.Show();
                 this.Close();
 
             }

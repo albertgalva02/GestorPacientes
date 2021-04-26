@@ -50,7 +50,8 @@ namespace GestorPacientes
 
         public void Volver() 
         {
-            FrmCitas.instancia.Show();
+            FrmCitas form = new FrmCitas();
+            form.Show();
             this.Close();
         }
         #endregion

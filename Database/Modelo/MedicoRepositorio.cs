@@ -172,7 +172,7 @@ namespace Database.Modelo
 
         public DataTable GetSearch(int id)
         {
-            SqlDataAdapter command = new SqlDataAdapter("SELECT id_medico, nombre, apellido, correo, telefono, cedula FROM medicos where id_medico = @id", _connection);
+            SqlDataAdapter command = new SqlDataAdapter("SELECT id_medico as 'ID', nombre, apellido, correo, telefono, cedula FROM medicos where id_medico = @id", _connection);
             command.SelectCommand.Parameters.AddWithValue("@id",id);
 
             return LoadData(command);
@@ -180,7 +180,7 @@ namespace Database.Modelo
 
         public DataTable GetAll()
         {
-            SqlDataAdapter command = new SqlDataAdapter("SELECT id_medico, nombre, apellido, correo, telefono, cedula FROM medicos", _connection);
+            SqlDataAdapter command = new SqlDataAdapter("SELECT id_medico as 'ID', nombre, apellido, correo, telefono, cedula FROM medicos", _connection);
 
             return LoadData(command);
         }

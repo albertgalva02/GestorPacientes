@@ -123,10 +123,7 @@ namespace GestorPacientes
             this.index = -1;
         }
 
-
-
         #endregion
-
-        
+               
     }
 }

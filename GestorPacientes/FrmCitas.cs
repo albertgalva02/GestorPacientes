@@ -17,7 +17,6 @@ namespace GestorPacientes
 {
     public sealed partial class FrmCitas : Form
     {
-        public static FrmCitas instancia { get; } = new FrmCitas();
         public int index;
         ServicioCita cita;
         public FrmCitas()
@@ -201,7 +200,7 @@ namespace GestorPacientes
             if (this.index >= 0)
             {
 
-                DialogResult opcion = MessageBox.Show("Esta seguro de que desea eliminar esta cita?" +
+                DialogResult opcion = MessageBox.Show("Esta seguro de que desea eliminar esta cita? " +
                     "si lo hace, tambien seran eliminados todos los resultados pertenecientes " +
                     "a la misma", "advertencia", MessageBoxButtons.OKCancel);
 

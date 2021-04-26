@@ -57,8 +57,8 @@ namespace Database.Modelo
 
         public DataTable GetAll()
         {
-            SqlDataAdapter command = new SqlDataAdapter("SELECT r.id_resultado, concat(p.nombre,' ',p.apellido) as nombre," +
-                " p.cedula, pr.nombre, r.estado, case " +
+            SqlDataAdapter command = new SqlDataAdapter("SELECT r.id_resultado as 'ID', concat(p.nombre,' ',p.apellido) as 'Paciente'," +
+                " p.cedula, pr.nombre as 'Prueba', r.estado, case " +
                 "when r.estado = 'P' then 'Pendiente' when r.estado = 'C' then 'Completado' end as 'estado' " +
                 "FROM resultados r INNER JOIN pacientes p on(r.cedula_paciente = p.cedula) " +
                 "INNER JOIN pruebas pr on (r.id_prueba = pr.id_prueba) WHERE r.estado = 'P'", _connection);
@@ -95,9 +95,9 @@ namespace Database.Modelo
 
         public DataTable GetSearch(string cedula)
         {
-            SqlDataAdapter command = new SqlDataAdapter("SELECT r.id_resultado, concat(p.nombre,' ',p.apellido) as nombre," +
-                " p.cedula, pr.nombre, r.estado, case " +
-                "when r.estado = 'P' then 'Pendiente' when r.estado = 'C' then 'Completado' end as 'estado' " +
+            SqlDataAdapter command = new SqlDataAdapter("SELECT r.id_resultado as 'ID', concat(p.nombre,' ',p.apellido) as 'Paciente'," +
+                " p.cedula, pr.nombre as 'Prueba', r.estado, case " +
+                "when r.estado = 'P' then 'Pendiente' when r.estado = 'C' then 'Completado' end as 'Estado' " +
                 "FROM resultados r INNER JOIN pacientes p on(r.cedula_paciente = p.cedula) " +
                 "INNER JOIN pruebas pr on (r.id_prueba = pr.id_prueba) where p.cedula = @cedula", _connection);
             command.SelectCommand.Parameters.AddWithValue("@cedula", cedula);
@@ -107,7 +107,7 @@ namespace Database.Modelo
 
         public DataTable GetResultadosCita(int id)
         {
-            SqlDataAdapter command = new SqlDataAdapter("select p.nombre, case " +
+            SqlDataAdapter command = new SqlDataAdapter("select p.nombre as 'Prueba', case " +
                 "when r.estado = 'P' then 'Pendiente' when r.estado = 'C' then 'Completado' end as Estado " +
                 "from resultados r join pruebas p on (r.id_prueba = p.id_prueba) WHERE r.id_cita = @id", _connection);
             command.SelectCommand.Parameters.AddWithValue("@id", id);
@@ -117,7 +117,7 @@ namespace Database.Modelo
 
         public DataTable GetResultadosCompletados(int id)
         {
-            SqlDataAdapter command = new SqlDataAdapter("select p.nombre, r.resultado " +
+            SqlDataAdapter command = new SqlDataAdapter("select p.nombre as 'Prueba', r.resultado " +
                 "from resultados r join pruebas p on (r.id_prueba = p.id_prueba) WHERE r.id_cita = @id and r.estado = 'C'", _connection);
             command.SelectCommand.Parameters.AddWithValue("@id", id);
 
